@@ -1,0 +1,48 @@
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+       <div class="row">
+         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+           <div class="card card-signin my-5">
+             <div class="card-body">
+               <h5 class="card-title text-center">Log In</h5>
+               <form class="form-signin" #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+              
+                  <small class="text-danger">{{msg}}</small>
+                  <div class="form-label-group">
+                    <label for="inputId">User Id</label>
+                   <input type="number" id="inputId" class="form-control" #empIdRef='ngModel' name="userId" ngModel placeholder="User Id" required autofocus>  
+                   <div *ngIf='empIdRef.errors && empIdRef.touched' class="alert alert-danger">
+                    <div [hidden]='!empIdRef.errors.required'> Provide Id </div>
+                     </div>
+                  </div>
+                 
+   
+                 <div class="form-label-group">
+                    <label for="inputPassword">Password</label>
+                   <input type="password" id="inputPassword" minlength="6" class="form-control" #empsalRef='ngModel' name="userPassword" ngModel placeholder="Password" required>
+                   <div *ngIf='empsalRef.errors && empsalRef.touched' class="alert alert-danger">
+                    <div [hidden]='!empsalRef.errors.required'> Provide Phone Number </div>
+                    <div *ngIf='empsalRef.errors.pattern'>Password should consists of minimun 6 digits</div>
+                </div>
+                 </div><br>
+   
+               <!--  <div class="custom-control custom-checkbox mb-3">
+                   <input type="checkbox" class="custom-control-input" id="customCheck1">
+                   <label class="custom-control-label" for="customCheck1">Remember password</label>
+                 </div>-->
+                 <input [disabled]="userForm.invalid" class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" value="Login">
+                 <hr class="my-4">
+                <!-- <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+                 <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>-->
+               </form>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </body>

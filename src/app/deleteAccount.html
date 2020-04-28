@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        
+</head>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-6 offset-md-3">
+                <div class="col-sm-9 col-md-7 col-lg-50 mx-auto">
+                   
+<h4 class="text-success">{{message}}</h4>
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+
+        <div class="form-group">
+            <label><b>USER ID: </b></label>
+            <input required minlength="1" type="number" #empIdRef='ngModel' name="userId" ngModel class="form-control">
+            <div *ngIf='empIdRef.errors && empIdRef.touched' class="alert alert-danger">
+                <div [hidden]='!empIdRef.errors.required'> Provide  USER Id to delete your user account</div>
+            </div>
+        </div>
+
+        <input [disabled]="userForm.invalid" type="submit" value="Delete" class="btn btn-primary">
+
+    </form>
+</div>
+</div>
+<div>
+    <h2 class="text-danger">{{msg}}</h2>
+</div>
+</div>
+</div>
+</div>

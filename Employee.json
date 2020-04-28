@@ -1,0 +1,60 @@
+{
+  "employees": [
+    {
+      "id": 9999,
+      "name": "MANIKANTH",
+      "salary": 1000000,
+      "phonenumber": 7382979998,
+      "company": "NMR INFOTECH SOLUTIONS"
+    },
+    {
+      "id": 6669,
+      "name": "SIRI-MAGGIE",
+      "salary": 1000000,
+      "phonenumber": 9160674789,
+      "company": "NMR INFOTECH SOLUTIONS"
+    },
+    {
+      "id": 2223,
+      "name": "LAXMAN",
+      "salary": 75000,
+      "phonenumber": 1111111111,
+      "company": "NMR INFOTECH SOLUTIONS"
+    },
+    {
+      "id": 3333,
+      "name": "RAM",
+      "salary": 95000,
+      "phonenumber": 2222222222,
+      "company": "NMR INFOTECH SOLUTIONS"
+    },
+    {
+      "id": 4444,
+      "name": "SRIMANTH",
+      "salary": 500000,
+      "phonenumber": 5555555555,
+      "company": "NMR INFOTECH SOLUTIONS"
+    },
+    {
+      "id": 5555,
+      "name": "SRI HARSHA",
+      "salary": 150000,
+      "phonenumber": 6666666666,
+      "company": "NMR INFOTECH SOLUTIONS"
+    },
+    {
+      "id": 6666,
+      "name": "REDDY",
+      "salary": 252000,
+      "phonenumber": 7777777777,
+      "company": "NMR INFOTECH SOLUTIONS"
+    },
+    {
+      "id": 8883,
+      "name": "MAGGIE",
+      "salary": 1000000,
+      "phonenumber": 7382979998,
+      "company": "NMR INFOTECH SOLUTIONS"
+    }
+  ]
+}
