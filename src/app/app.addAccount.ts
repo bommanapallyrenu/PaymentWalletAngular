@@ -23,7 +23,7 @@ export class AddAccountComponent implements OnInit{
         this.message=data;
     },
     error=>{
-        this.status="Enter proper userid and accountid";
+        this.status="Enter valid userid and accountid";
 
     })
 }

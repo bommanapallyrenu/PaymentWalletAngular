@@ -22,7 +22,7 @@ message:string;
         this.amount = data;
       }, 
       error => {
-        this.message="Enter valid Id";
+        this.message="Account Id does not Exist";
       })
   }
 

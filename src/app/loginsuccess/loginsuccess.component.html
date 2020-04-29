@@ -12,10 +12,11 @@
 <button class="btn btn-success" routerLink="adding">Deposit</button>&nbsp;
 <button class="btn btn-success" routerLink="transaction">Get transactions</button>&nbsp;
 </div>
-<ul class="pager">
-  <li class="previous"><a href="#">Previous</a></li>
-  <li class="next"><a href="#">Next</a></li>
-</ul>
+<div class="w3-clear nextprev">
+  <a class="w3-right w3-btn" style="position: absolute; margin-top:100%; right: 0%; bottom: 70%;" href="#">Next&#10095;</a>
+  <a class="w3-left w3-btn" href="#">&#10094;Previous</a>
+  
+  </div>
 <br>
 <router-outlet></router-outlet>
 </body>

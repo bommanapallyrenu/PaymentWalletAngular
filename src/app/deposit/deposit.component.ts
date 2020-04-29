@@ -24,7 +24,7 @@ export class AddingComponent implements OnInit {
         this.message=data;
       },
       error=>{
-        this.status="Enter Valid Id";
+        this.status="Account Id does not exist";
       }
     )
   }

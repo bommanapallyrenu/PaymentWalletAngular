@@ -3,17 +3,22 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
 <div style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="lastname">Account Id</label>
+      <label for="lastname"><b>Enter your Account Id</b></label>
       <input type="text" class="form-control" id="accountid" required [(ngModel)]="accountid" name="accountid">
     </div>
  
     <div class="btn-group">
-      <button type="submit" class="btn btn-success">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
-  </form>
+  </form></div></div></div></div></div>
 </div>
 <div class="container">
     <table class="table table-striped" *ngIf="transactions  else elseBlock">
@@ -37,7 +42,7 @@
         </tbody>
     </table>
     <ng-template #elseBlock>
-        <h4 align="center"> There are no transactions to display, please enter accountid </h4>
+        <h4 align="center" padding= "14px 25px"> There are no transactions to display, please enter accountid </h4>
     </ng-template>
 </div>
 <div>
