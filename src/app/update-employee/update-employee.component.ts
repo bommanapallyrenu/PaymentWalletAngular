@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MyserviceService, Employees } from '../myservice.service';
+import { MyserviceService, Users } from '../myservice.service';
 
 @Component({
   selector: 'app-update-employee',
@@ -9,12 +9,12 @@ import { MyserviceService, Employees } from '../myservice.service';
 })
 export class UpdateEmployeeComponent implements OnInit {
   obj1: any;
-  employees: Employees[];
+  employees: Users[];
   message: string;
   constructor(private myservice: MyserviceService, private router: Router) {
     this.obj1 = this.myservice.updateMethod();
   }
-  onUpdate(uemployee: Employees): any {
+  onUpdate(uemployee: Users): any {
     return this.myservice.onUpdate(uemployee).subscribe(data => {
       this.message = data
     });

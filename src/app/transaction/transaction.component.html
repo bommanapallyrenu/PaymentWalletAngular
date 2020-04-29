@@ -1,1 +1,47 @@
-<p>transaction works!</p>
+
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+<div style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="lastname">Account Id</label>
+      <input type="text" class="form-control" id="accountid" required [(ngModel)]="accountid" name="accountid">
+    </div>
+ 
+    <div class="btn-group">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>
+</div>
+<div class="container">
+    <table class="table table-striped" *ngIf="transactions  else elseBlock">
+        <thead>
+        <tr>
+            <th>Transaction ID</th>
+            <th>Transaction amount</th>
+            <th> Description</th>
+            <th>Transaction Date</th>
+            <th>Account Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of transactions">
+                <td> {{t.transactionID}} </td>
+                <td> {{t.amount}} </td>
+                <td>{{t.description}}</td>
+                <td> {{t.transactionDate}} </td>
+                <td> {{t.accountbalance}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #elseBlock>
+        <h4 align="center"> There are no transactions to display, please enter accountid </h4>
+    </ng-template>
+</div>
+<div>
+    <h4 class="text-danger">{{message}}</h4>
+</div>
+
+

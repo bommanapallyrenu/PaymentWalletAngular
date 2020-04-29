@@ -1,42 +1,46 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { logging } from 'protractor';
+import { LoginComponent } from './login/login.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MyserviceService {
-  updateemployee: Employees;
+  updateuser: Users;
+employee:Transaction;
+
   constructor(private httpService: HttpClient) { }
-  public getEmployees() {
+  public getUsers() {
     console.log("ins service get employees");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.get<Employees>("http://localhost:9994/user/GetAllUsers");
+    return this.httpService.get<Users>("http://localhost:9994/user/GetAllUsers");
   }
 
-  public addEmp(addemp: Employees) {
+  public addUser(adduser: Users) {
     console.log("ins service add");
-    console.log(addemp);
+    console.log(adduser);
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.post("http://localhost:9994/user/addUser", addemp,  { headers, responseType: 'text'});
+    return this.httpService.post("http://localhost:9994/user/addUser", adduser,  { headers, responseType: 'text'});
   }
   
-  public addaccount(id:number,addemp1: Account) {
+  public addaccount(id:number,addaccount1: Account) {
     console.log("ins service add");
-    console.log(addemp1);
+    console.log(addaccount1);
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.post("http://localhost:9994/account/addAccount/"+id, addemp1,  { headers, responseType: 'text'});
+    return this.httpService.post("http://localhost:9994/account/addAccount/"+id, addaccount1,  { headers, responseType: 'text'});
   }
-  public update(updateemployee: Employees) {
-    this.updateemployee = updateemployee;
+  public update(updateuser:Users) {
+    this.updateuser = updateuser;
   }
   public updateMethod() {
-    return this.updateemployee;
+    return this.updateuser;
   }
-  public onUpdate(updatemp: Employees) {
+  public onUpdate(updateuser: Users) {
     console.log("ins service update");
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.put("http://localhost:9994/user/UpdateUser", updatemp,  { headers, responseType: 'text'});
+    return this.httpService.put("http://localhost:9994/user/UpdateUser", updateuser,  { headers, responseType: 'text'});
   }
   public delete(id: number) {
     console.log("ins service delete");
@@ -50,7 +54,7 @@ export class MyserviceService {
     return this.httpService.delete("http://localhost:9994/account/DeleteAccount/" + id,  { headers, responseType: 'text'});
   }
 
-  userlogin(login:Employees){
+  userlogin(login:Users){
     console.log("ins service login");
     console.log(login);
     const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
@@ -64,17 +68,18 @@ export class MyserviceService {
  
 fundtransfer(accountid1:number,accountid2:number,amount:number):Observable<string> {
   const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-  return this.httpService.put('http://localhost:9994/account/fundtransfer/'+accountid1+'/'+accountid2+'/'+ amount,this.updateemployee,{headers,responseType:'text'});
+  return this.httpService.put('http://localhost:9994/account/fundtransfer/'+accountid1+'/'+accountid2+'/'+ amount,this.updateuser,{headers,responseType:'text'});
 }
 
 addbalance(acc:Account,amount1:number): Observable<String>{
   const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
   return this.httpService.put('http://localhost:9994/account/Deposit/'+amount1,acc,{ headers, responseType: 'text'});
-  
-  
   }
+  getTransactionsById(accountid: number): Observable<any> {
+    return this.httpService.get('http://localhost:9994/transaction/GetAllTransactionsById/'+accountid);
   }
-export class Employees {
+}
+export class Users {
   userId: number;
   userName: string;
   userPhoneno: number;
@@ -86,4 +91,12 @@ export class Account{
   accountid:number;
   status:string;
   accountbalance:number;
+  }
+  export class Transaction{
+    transactionID:number;
+    amount:number;
+	  description:string
+    accountbalance:number;
+    accountid:number;
+    transactionDate:Date;
   }

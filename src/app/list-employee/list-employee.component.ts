@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MyserviceService, Employees } from '../myservice.service';
+import { MyserviceService, Users } from '../myservice.service';
 import { Router } from '@angular/router';
 
 
@@ -10,24 +10,24 @@ import { Router } from '@angular/router';
 })
 export class ListEmployeeComponent implements OnInit {
   message: string;
-  employees: Employees[];
+  users: Users[];
   constructor(private myservice: MyserviceService, private router: Router) {
   }
 
   ngOnInit(): any {
-    this.myservice.getEmployees().subscribe(
+    this.myservice.getUsers().subscribe(
       response => this.handleSuccessfulResponse(response),
     );
   }
   handleSuccessfulResponse(response) {
-    this.employees = response;
+    this.users= response;
   }
-  update(updateemployee: Employees) {
-    this.myservice.update(updateemployee);
+  update(updateuser: Users) {
+    this.myservice.update(updateuser);
     this.router.navigate(['/updateemp']); //updating the employee
   }
-  delete(deleteemployee: Employees): any {
-    this.myservice.delete(deleteemployee.userId).subscribe(data => {
+  delete(deleteuser: Users): any {
+    this.myservice.delete(deleteuser.userId).subscribe(data => {
       this.message = data
     });
     this.router.navigate(['/listemp']);

@@ -11,6 +11,7 @@ import { DisplayComponent } from './display/display.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { AddingComponent } from './deposit/deposit.component';
 import { AppComponent } from './app.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 
 
@@ -28,7 +29,8 @@ const routes: Routes = [
     {path: 'delete', component: DeleteAccountComponent},
     {path:'display',component:DisplayComponent},
     {path:'transfer',component:TransferComponent},
-    {path:'adding',component:AddingComponent}
+    {path:'adding',component:AddingComponent},
+    {path:'transaction',component:TransactionComponent}
   ]
 },
 ];

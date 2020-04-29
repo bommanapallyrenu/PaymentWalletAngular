@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MyserviceService, Employees } from '../myservice.service';
+import { MyserviceService, Users } from '../myservice.service';
 
 @Component({
   selector: 'app-add-user',
@@ -14,9 +14,9 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(addemp:Employees):any{
-    console.log(addemp);
-     this.myservice.addEmp(addemp).subscribe(data => {
+  onSubmit(adduser:Users):any{
+    console.log(adduser);
+     this.myservice.addUser(adduser).subscribe(data => {
       this.message=data});
   }
 

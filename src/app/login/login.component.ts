@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MyserviceService, Employees } from '../myservice.service';
+import { MyserviceService, Users} from '../myservice.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit(login:Employees):any{
+  onSubmit(login:Users):any{
     console.log(login);
      this.myservice.userlogin(login).subscribe(data => {
       console.log("response recieved");
