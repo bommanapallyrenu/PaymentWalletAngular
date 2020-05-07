@@ -48,12 +48,6 @@ employee:Transaction;
     return this.httpService.delete("http://localhost:9994/user/DeleteUser/" + id,  { headers, responseType: 'text'});
   }
 
-  public deleteaccount(id: number) {
-    console.log("ins service delete");
-    const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-    return this.httpService.delete("http://localhost:9994/account/DeleteAccount/" + id,  { headers, responseType: 'text'});
-  }
-
   userlogin(login:Users){
     console.log("ins service login");
     console.log(login);

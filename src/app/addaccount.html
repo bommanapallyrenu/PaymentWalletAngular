@@ -21,7 +21,7 @@
             <label><b>ACCOUNT ID:</b> </label>
             <input required minlength="1" type="number" #empIdRef='ngModel' name="accountid" ngModel class="form-control">
             <div *ngIf='empIdRef.errors && empIdRef.touched' class="alert alert-danger">
-                <div [hidden]='!empIdRef.errors.required'> Provide Id </div>
+                <div [hidden]='!empIdRef.errors.required'> Provide  account Id </div>
             </div>
         </div>
 
@@ -31,7 +31,7 @@
             <div *ngIf='empNameRef.errors
                         && empNameRef.touched' class="alert alert-danger">
                 <div [hidden]='!empNameRef.errors.required'>
-                    Provide Status(eg:"adding amount" is your current status)
+                    Provide Status(eg:"adding account" is your current status)
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
             <div *ngIf='empphoneRef.errors && empphoneRef.touched' class="alert alert-danger">
                 <div [hidden]='!empphoneRef.errors.required'> Provide Balance </div>
             </div>
-            <div *ngIf='empphoneRef.errors.pattern'>Amount be positive</div>
+            <div *ngIf='empphoneRef.errors.pattern'>Amount should be positive</div>
 
         </div>
 
