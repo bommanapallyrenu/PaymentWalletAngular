@@ -8,7 +8,7 @@
          <h4 class="text-success">{{message}}</h4> 
          <h4 class="text-danger">{{status}}</h4>    
 <div class="form-group">
-    <label><b>Account ID</b></label>
+    <label><b>Enter Your Account ID</b></label>
     <input type="number" class="form-control" name="accountid" #idRef='ngModel' ngModel required>
     <div *ngIf='idRef.errors && idRef.touched' class="alert alert-danger">
       <div [hidden]='!idRef.errors.required'> Provide Id</div>

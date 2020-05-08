@@ -8,24 +8,25 @@ import { MyserviceService } from '../myservice.service';
   styleUrls: ['./transfer.component.css']
 })
 export class TransferComponent implements OnInit {
-  accountid1:number;
+  accountid1:any;
   accountid2:number;
   amount:number;
   status:string;
   message:string;
     constructor(private route: ActivatedRoute,private router:Router,
-      private wireService: MyserviceService) { }
+      private Service: MyserviceService) { }
   
     ngOnInit(): void {
+      this.accountid1=this.Service.sharedId;
     }
     list(){
-      this.wireService.fundtransfer(this.accountid1,this.accountid2,this.amount)
+      this.Service.fundtransfer(this.accountid1,this.accountid2,this.amount)
       .subscribe(data => {
         console.log("response recieved");  
         this.message="Transfered successfully";
         },
         error=>{
-          this.status="Enter Valid id's";
+          this.status="Cannot transfer money,please check your id and balance before transfering";
         });
   }
   

@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     console.log(login);
      this.myservice.userlogin(login).subscribe(data => {
       console.log("response recieved");
+      this.myservice.sharedId=login.userId;
       this.router.navigate(['loginsuccess'])
   },
   error=>{

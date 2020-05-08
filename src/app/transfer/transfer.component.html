@@ -11,13 +11,13 @@
         <h3 class="text-success">{{message}}</h3>
         
 <form name="myForm" #userForm='ngForm'>
-<div class="form-group">
+<!--<div class="form-group">
   <label><b>Enter your AccountId</b></label>
   <input type="number" class="form-control" name="accId" #id1ref='ngModel' [(ngModel)]="accountid1" required>
   <div *ngIf='id1ref.errors && id1ref.touched' class="alert alert-danger">
     <div [hidden]='!id1ref.errors.required'> Provide Id</div>
 </div> 
-</div>
+</div>-->
 <div class="form-group">
     <label><b>Enter the AccountID to Transfer</b></label>
     <input type="number" class="form-control" name="accId1" #id2ref='ngModel' [(ngModel)]="accountid2" required>

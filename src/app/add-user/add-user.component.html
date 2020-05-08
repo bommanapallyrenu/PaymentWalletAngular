@@ -12,11 +12,11 @@
 
             <label>USER ID: </label>
 
-            <input required minlength="1" type="number" #empIdRef='ngModel' name="userId" ngModel class="form-control">
+            <input required minlength="1" type="number" #userIdRef='ngModel' name="userId" ngModel class="form-control">
 
-            <div *ngIf='empIdRef.errors && empIdRef.touched' class="alert alert-danger">
+            <div *ngIf='userIdRef.errors && userIdRef.touched' class="alert alert-danger">
 
-                <div [hidden]='!empIdRef.errors.required'> Provide Id </div>
+                <div [hidden]='!userIdRef.errors.required'> Provide Id </div>
 
             </div>
         </div>
@@ -27,18 +27,18 @@
 
             <label>USER NAME: </label>
 
-            <input required minlength="4" type="text" #empNameRef='ngModel' name="userName" ngModel class="form-control">
+            <input required minlength="3" type="text" #userNameRef='ngModel' name="userName" ngModel class="form-control">
 
-            <div *ngIf='empNameRef.errors
-                        && empNameRef.touched' class="alert alert-danger">
+            <div *ngIf='userNameRef.errors
+                        && userNameRef.touched' class="alert alert-danger">
 
-                <div [hidden]='!empNameRef.errors.required'>
+                <div [hidden]='!userNameRef.errors.required'>
 
                     Provide Name
 
                 </div>
 
-                <div *ngIf='empNameRef.errors.pattern'>Name should be minimum of 4 characters length</div>
+                <div *ngIf='userNameRef.errors.pattern'>Name should be minimum of 3 characters length</div>
 
             </div>
 
@@ -48,11 +48,11 @@
 
             <label> PASSWORD: </label>
 
-            <input required minlength="6" length="10" type="password" #empsalRef='ngModel' name="userPassword" ngModel class="form-control">
+            <input required minlength="6" type="password" #userpasswordRef='ngModel' name="userPassword" ngModel class="form-control">
 
-            <div *ngIf='empsalRef.errors && empsalRef.touched' class="alert alert-danger">
+            <div *ngIf='userpasswordRef.errors && userpasswordRef.touched' class="alert alert-danger">
 
-                <div [hidden]='!empsalRef.errors.required'> Provide Password </div>
+                <div [hidden]='!userpasswordRef.errors.required'> Provide Password </div>
 
             </div>
         </div>
@@ -61,13 +61,13 @@
 
             <label>PHONE NUMBER: </label>
 
-            <input required length="10" type="number" #empphoneRef='ngModel' name="userPhoneno" ngModel class="form-control">
+            <input required length="10" type="number" #userphoneRef='ngModel' pattern="^((\\+91-?)|0)?[0-9]{10}$" name="userPhoneno" ngModel class="form-control">
 
-            <div *ngIf='empphoneRef.errors && empphoneRef.touched' class="alert alert-danger">
+            <div *ngIf='userphoneRef.errors && userphoneRef.touched' class="alert alert-danger">
 
-                <div [hidden]='!empphoneRef.errors.required'> Provide Phone Number </div>
+                <div [hidden]='!userphoneRef.errors.required'> Provide Phone Number </div>
 
-                <div *ngIf='empNameRef.errors.pattern'>Phone number should consists of 10 digits</div>
+                <div *ngIf='userphoneRef.errors.pattern'>Phone number should consists of 10 digits</div>
 
             </div>
         </div>
@@ -76,19 +76,19 @@
 
             <label>EMAIL: </label>
 
-            <input required minlength="15" type="text" #empcompanyName='ngModel' name="userEmail" ngModel
+            <input required minlength="15" type="text" #useremailRef='ngModel' name="userEmail" ngModel
                 class="form-control">
 
-            <div *ngIf='empcompanyName.errors
-                        && empcompanyName.touched' class="alert alert-danger">
+            <div *ngIf='useremailRef.errors
+                        && useremailRef.touched' class="alert alert-danger">
 
-                <div [hidden]='!empcompanyName.errors.required'>
+                <div [hidden]='!useremailRef.errors.required'>
 
                     Provide Email
 
                 </div>
 
-                <div *ngIf='empcompanyName.errors.pattern'>Email should be minimum of 15 characters length</div>
+                <div *ngIf='useremailRef.errors.pattern'>Email should be minimum of 15 characters length</div>
 
             </div>
 

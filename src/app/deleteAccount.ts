@@ -12,10 +12,12 @@ import { Router } from '@angular/router';
 export class DeleteAccountComponent {
 message:string;
 msg:string;
+  userid:any;
     constructor(private service:MyserviceService,private router:Router){}
 
-  onSubmit(user:Users):any{
-    this.service.delete(user.userId).subscribe(data=>{
+    ngOnInit(): void {
+      this.userid=this.service.sharedId; 
+    this.service.delete(this.userid).subscribe(data=>{
       this.message=data;
       this.router.navigate(['addemp']);
     },
@@ -23,5 +25,5 @@ msg:string;
       console.log("exception occured");
       this.msg="Id does not exist";
     })
-  }
+    }
 }

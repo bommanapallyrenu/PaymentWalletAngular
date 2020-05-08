@@ -13,13 +13,13 @@ export class AddingComponent implements OnInit {
   message:String;
   status:string;
     constructor(private route: ActivatedRoute,private router:Router,
-      private wireService: MyserviceService) { }
+      private Service: MyserviceService) { }
   
     ngOnInit(): void {
     }
   onSubmit(acc:Account)
   {
-    this.wireService.addbalance(acc,this.amount).subscribe(
+    this.Service.addbalance(acc,this.amount).subscribe(
       data=>{
         this.message=data;
       },

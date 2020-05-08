@@ -23,7 +23,7 @@
 
             <label>USER NAME: </label>
 
-            <input required minlength="4" type="text" [(ngModel)]="obj1.userName" #empNameRef='ngModel' name="userName" ngModel
+            <input required minlength="3" type="text" [(ngModel)]="obj1.userName" #empNameRef='ngModel' name="userName" ngModel
                 class="form-control">
 
             <div *ngIf='empNameRef.errors
@@ -35,7 +35,7 @@
 
                 </div>
 
-                <div *ngIf='empNameRef.errors.pattern'>Name should be minimum of 4 characters length</div>
+                <div *ngIf='empNameRef.errors.pattern'>Name should be minimum of 3 characters length</div>
 
             </div>
 
@@ -59,12 +59,12 @@
 
             <label>PHONE NUMBER: </label>
 
-            <input required minlength="10" [(ngModel)]="obj1.userPhoneno" #empphoneRef='ngModel' name="userPhoneno" ngModel class="form-control">
+            <input required maxlength="10" [(ngModel)]="obj1.userPhoneno" #empphoneRef='ngModel' name="userPhoneno" ngModel class="form-control">
 
             <div *ngIf='empphoneRef.errors && empphoneRef.touched' class="alert alert-danger">
 
                 <div [hidden]='!empphoneRef.errors.required'> Provide Phone Number </div>
-                <div *ngIf='empphoneRef.errors.pattern'> min 10 digits</div>
+                <div *ngIf='empphoneRef.errors.pattern'> max 10 digits</div>
             </div>
         </div>
 

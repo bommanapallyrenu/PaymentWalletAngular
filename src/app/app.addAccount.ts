@@ -11,16 +11,19 @@ import { Router } from '@angular/router';
 export class AddAccountComponent implements OnInit{
     
     message: string;
-    id:number;
+    id:any;
     status:string;
     constructor(private myservice: MyserviceService,private router: Router) { }
   
     ngOnInit(): void {
+        this.id=this.myservice.sharedId;
     }
     onSubmit(login:Account):any{
       console.log(login);
-       this.myservice.addaccount(this.id,login).subscribe(data => {
+       this.myservice.addaccount(this.id,login).subscribe(
+           data => {
         this.message=data;
+        this.myservice.sharedId=login.accountid;
     },
     error=>{
         this.status="Enter valid userid and accountid";

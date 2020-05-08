@@ -10,24 +10,16 @@ import { Employee } from '../employee-service.service';
 export class TransactionComponent implements OnInit {
  
 
-  accountid: number;
+  accountid: any;
   transactions: Transaction[];
  message:string;
   constructor(private dataService: MyserviceService) { }
  
   ngOnInit() {
-    this.accountid = 0;
-  }
- 
-  private getTransactions() {
+    this.accountid=this.dataService.sharedId;
+
     this.dataService.getTransactionsById(this.accountid)
-      .subscribe(transactions => {this.transactions = transactions},
-        error=>{this.message="Account does not exists"}
+      .subscribe(transactions => {this.transactions = transactions}
       );
   }
- 
-  onSubmit() {
-    this.getTransactions();
-  }
-
 }

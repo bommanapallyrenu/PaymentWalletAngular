@@ -1,22 +1,21 @@
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
 <body>
-  <h2 align="center">Services</h2>
-  <div align="center">
-    <button class="btn btn-success" routerLink="addaccount">Add account</button>&nbsp;
-    <button class="btn btn-success" routerLink="delete">Delete User Account</button>&nbsp;
+<h2 align="center">Services</h2>
+<div align="center">
+  <button class="btn btn-success" routerLink="addaccount">Add account</button>&nbsp;
+  <button class="btn btn-success" routerLink="delete">Delete User Account</button>&nbsp;
 <button class="btn btn-success" routerLink="display">Display Balance</button>&nbsp;
 <button class="btn btn-success" routerLink="transfer">Transfer funds</button>&nbsp;
 <button class="btn btn-success" routerLink="adding">Deposit</button>&nbsp;
 <button class="btn btn-success" routerLink="transaction">Get transactions</button>&nbsp;
 </div>
-<div class="w3-clear nextprev">
-  <a class="w3-right w3-btn" style="position: absolute; margin-top:100%; right: 0%; bottom: 70%;" href="#">Next&#10095;</a>
-  <a class="w3-left w3-btn" href="#">&#10094;Previous</a>
-  
-  </div>
 <br>
+<div class="w3-clear nextprev">
+  <!--<a class="w3-right w3-btn" style="position: absolute; margin-top:100%; right: 0%; bottom: 70%;" href="/">Next&#10095;</a>-->
+  <!--<a class="w3-left w3-btn" href="#">&#10094;Previous</a>-->
+</div>
 <router-outlet></router-outlet>
 </body>
