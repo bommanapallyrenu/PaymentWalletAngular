@@ -3,6 +3,7 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+  <div class="bg">
 <h2 align="center">Services</h2>
 <div align="center">
   <button class="btn btn-success" routerLink="addaccount">Add account</button>&nbsp;
@@ -14,9 +15,9 @@
 </div>
 <br>
 <div class="w3-clear nextprev">
-  <button (click)="logout()" class="btn btn-danger" style="position: absolute; margin-top:100%; right: 5%; bottom: 75%;">Log out</button>
+  <button (click)="logout()" class="btn btn-danger" style="position: absolute; margin-top:100%; right: 5%; bottom: 70%;">Log out</button>
   <!--<a class="w3-right w3-btn" style="position: absolute; margin-top:100%; right: 0%; bottom: 70%;" href="/">Next&#10095;</a>-->
   <!--<a class="w3-left w3-btn" href="#">&#10094;Previous</a>-->
-</div>
+</div></div><br><br>
 <router-outlet></router-outlet>
 </body>

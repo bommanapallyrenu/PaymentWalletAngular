@@ -5,6 +5,7 @@
 </head>
 <body>
     <div class="container">
+      <div class="jumbotron">
        <div class="row">
          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
            <div class="card card-signin my-5">
@@ -14,7 +15,7 @@
               
                   <small class="text-danger">{{msg}}</small>
                   <div class="form-label-group">
-                    <label for="inputId">User Id</label>
+                    <label for="inputId"><b>User Id</b></label>
                    <input type="number" id="inputId" class="form-control" #empIdRef='ngModel' name="userId" ngModel placeholder="User Id" required autofocus>  
                    <div *ngIf='empIdRef.errors && empIdRef.touched' class="alert alert-danger">
                     <div [hidden]='!empIdRef.errors.required'> Provide Id </div>
@@ -23,7 +24,7 @@
                  
    
                  <div class="form-label-group">
-                    <label for="inputPassword">Password</label>
+                    <label for="inputPassword"><b>Password</b></label>
                    <input type="password" id="inputPassword" minlength="6" class="form-control" #userpasswordRef='ngModel' name="userPassword" ngModel placeholder="Password" required>
                    <div *ngIf='userpasswordRef.errors &&userpasswordRef.touched' class="alert alert-danger">
                     <div [hidden]='!userpasswordRef.errors.required'> Provide Password </div>
@@ -37,5 +38,5 @@
            </div>
          </div>
        </div>
-     </div>
+     </div></div>
    </body>

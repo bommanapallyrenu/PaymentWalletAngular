@@ -1,0 +1,13 @@
+body,html{
+    height:100%;
+  }
+  .jumbotron{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width :60%;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
