@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddEmployeeComponent } from './add-user/add-user.component';
+import { AddUserComponent } from './add-user/add-user.component';
 import { ListEmployeeComponent } from './list-employee/list-employee.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -21,7 +21,7 @@ import { TransactionComponent } from './transaction/transaction.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AddEmployeeComponent,
+    AddUserComponent,
     ListEmployeeComponent,
     UpdateEmployeeComponent,
     LoginComponent,

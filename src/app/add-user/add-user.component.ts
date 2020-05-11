@@ -7,7 +7,7 @@ import { MyserviceService, Users } from '../myservice.service';
   templateUrl: './add-user.component.html',
   styleUrls: ['./add-user.component.css']
 })
-export class AddEmployeeComponent implements OnInit {
+export class AddUserComponent implements OnInit {
   message: string;
   
   constructor(private myservice: MyserviceService,private router: Router) { }

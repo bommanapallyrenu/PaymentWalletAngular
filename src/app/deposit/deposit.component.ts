@@ -16,10 +16,11 @@ export class AddingComponent implements OnInit {
       private Service: MyserviceService) { }
   
     ngOnInit(): void {
+      this.accountid=this.Service.sharedId;
     }
-  onSubmit(acc:Account)
-  {
-    this.Service.addbalance(acc,this.amount).subscribe(
+    list(){
+ 
+    this.Service.addbalance(this.accountid,this.amount).subscribe(
       data=>{
         this.message=data;
       },

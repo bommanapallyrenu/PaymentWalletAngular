@@ -12,6 +12,15 @@ export class LoginsuccessComponent implements OnInit {
 
 
   ngOnInit(): void {
+    
   }
+  logout(){
+
+
+    sessionStorage.clear();
+    
+      this.router.navigate(['applogin']);
+    
+    }
 
 }

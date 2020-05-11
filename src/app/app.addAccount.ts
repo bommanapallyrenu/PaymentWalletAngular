@@ -23,7 +23,7 @@ export class AddAccountComponent implements OnInit{
        this.myservice.addaccount(this.id,login).subscribe(
            data => {
         this.message=data;
-        this.myservice.sharedId=login.accountid;
+        this.myservice.sharedId=this.id;
     },
     error=>{
         this.status="Enter valid userid and accountid";

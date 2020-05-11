@@ -70,9 +70,9 @@ fundtransfer(accountid1:number,accountid2:number,amount:number):Observable<strin
   return this.httpService.put('http://localhost:9550/account/fundtransfer/'+accountid1+'/'+accountid2+'/'+ amount,this.updateuser,{headers,responseType:'text'});
 }
 
-addbalance(acc:Account,amount1:number): Observable<String>{
+addbalance(userid:number,amount1:number): Observable<String>{
   const headers =new HttpHeaders().set('Content_Type', 'text/plain ;charset=utf-8');
-  return this.httpService.put('http://localhost:9550/account/Deposit/'+amount1,acc,{ headers, responseType: 'text'});
+  return this.httpService.put('http://localhost:9550/account/Deposit/'+userid+'/'+amount1,this.updateuser,{ headers, responseType: 'text'});
   }
   getTransactionsById(accountid: number): Observable<any> {
     return this.httpService.get('http://localhost:9550/transaction/GetAllTransactionsById/'+accountid);
